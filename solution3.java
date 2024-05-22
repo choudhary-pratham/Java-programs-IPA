@@ -43,8 +43,10 @@ class Employee {
 }
 
 class Company {
+    @SuppressWarnings("unused")
     private String companyName;
     private ArrayList<Employee> empArr = new ArrayList<Employee>();
+    @SuppressWarnings("unused")
     private int numEmployees;
 
     Company(String companyName, ArrayList<Employee> empArr, int numEmployees) {

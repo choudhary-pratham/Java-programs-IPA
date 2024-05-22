@@ -82,8 +82,8 @@ public class courseProgram {
         int size = c.size();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size - i - 1; j++) {
-                if (c.get(i).gethandson() > c.get(i + 1).gethandson()) {
-                    Collections.swap(c, i, i + 1);
+                if (c.get(j).gethandson() > c.get(j + 1).gethandson()) {
+                    Collections.swap(c, j, j + 1);
                 }
             }
         }
