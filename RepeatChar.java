@@ -4,22 +4,19 @@ public class RepeatChar {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        HashMap<Character, Integer> mpp = new HashMap<Character, Integer>();
-        for (int i = 0; i < str.length(); i++) {
+        int count = 1;
+        char prev = str.charAt(0);
+        for (int i = 1; i < str.length(); i++) {
             char ch = str.charAt(i);
-            if (mpp.containsKey(ch)) {
-                mpp.put(ch, mpp.get(ch) + 1);
+            if (ch == prev) {
+                count++;
             } else {
-                mpp.put(ch, 1);
+                System.out.printf("%c%d", prev, count);
+                count = 1;
             }
+            prev = ch;
         }
-        // mpp.forEach((key, value) -> {
-        // System.out.printf("%c - %d\n", key, value);
-        // });
-
-        for (char key : mpp.keySet()) {
-            System.out.printf("%c - %d\n", key, mpp.get(key));
-        }
+        System.out.printf("%c%d", prev, count);
         sc.close();
     }
 }
