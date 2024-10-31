@@ -12,10 +12,13 @@ public class findCountWord {
             if (Character.isLetter(ch) == false) {
                 if (word.equals(searchWord))
                     count++;
+                word = "";
             } else {
                 word += ch;
             }
         }
+        if (word.equals(searchWord))
+            count++;
         System.out.println(count);
         sc.close();
     }
